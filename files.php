@@ -10,7 +10,12 @@ if(isset($_POST['submit'])){
  $countfiles = count($_FILES['file']['name']);
  for($i=0 ; $i<$countfiles ; $i++){
   $filename = $_FILES['file']['name'][$i];
-  $upload = move_uploaded_file($_FILES['file']['tmp_name'][$i],'uploadFiles/'.$filename);
+  $upload = move_uploaded_file($_FILES['file']['tmp_name'][$i],'uploadFiles/'.$filename); 
  }
+ if($upload){
+    echo "Upload successfully";
+}else{
+    echo "Upload unsuccessfully";
+}
 }
 ?>
